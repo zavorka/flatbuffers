@@ -172,7 +172,9 @@ endif()
 if(FLATBUFFERS_BUILD_SHAREDLIB)
   add_library(flatbuffers_shared SHARED ${FlatBuffers_Library_SRCS})
   set_target_properties(flatbuffers_shared 
-      PROPERTIES OUTPUT_NAME flatbuffers SOVERSION 0)
+      PROPERTIES LIBRARY_OUTPUT_NAME flatbuffers 
+                 SOVERSION 0
+                 VERSION 0.0.0)
 endif()
 
 function(compile_flatbuffers_schema_to_cpp SRC_FBS)
